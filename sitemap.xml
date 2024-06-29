@@ -3,28 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.free5gc.org/</loc>
+    <loc>https://coolbao626.github.io/</loc>
   </url>
-  
-  <url>
-    <loc>https://www.free5gc.org/guide/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.free5gc.org/blog/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.free5gc.org/membership/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.free5gc.org/publication/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.free5gc.org/videos/</loc>
-  </url>
-  
+ 
 </urlset>
