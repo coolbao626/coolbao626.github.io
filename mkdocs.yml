@@ -16,7 +16,7 @@ extra:
 
 theme:
   name: material
-  logo: assets/icon.png
+  logo: assets/icon.jpg
   favicon: assets/icon.png
   palette:
     - scheme: default
