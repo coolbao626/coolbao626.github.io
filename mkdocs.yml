@@ -4,8 +4,8 @@ extra_css:
   - stylesheets/extra.css
 
 repo_name: 酷寶（竹科犬犬）
-repo_url: https://coolbao626.github.io/
-edit_uri: https://coolbao626.github.io/
+repo_url: https://github.com/coolbao626/coolbao626.github.io
+edit_uri: https://github.com/coolbao626/coolbao626.github.io/blob/main/docs/
 
 extra:
   social:
