@@ -63,7 +63,7 @@ theme:
 nav:
     - Home: index.md
     # - User Guide: guide/
-    # - Blogs: blog/
+    - Blogs: blogs/
     # - Supports: support/
     # - Sponsorship: membership/
     - Daddy & Mommy: 
