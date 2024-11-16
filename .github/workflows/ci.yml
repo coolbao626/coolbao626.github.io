@@ -22,3 +22,8 @@ jobs:
           EXTRA_PACKAGES: build-base
           # GITHUB_DOMAIN: 
           REQUIREMENTS: ./requirements.txt
+      - name: Deploy official-web to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./official-web  # 或你的构建输出目录
