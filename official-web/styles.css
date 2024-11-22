@@ -178,8 +178,13 @@ nav a:hover {
 }
 
 /* 添加購物車圖標 */
-.product-card button::before {
+.product-card .add-to-cart-btn::before {
     content: '🛒 ';
+    margin-right: 5px;
+}
+
+.product-card .see-details-btn::before {
+    content: '🔍 ';
     margin-right: 5px;
 }
 
