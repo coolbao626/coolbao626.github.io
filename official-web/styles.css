@@ -500,3 +500,21 @@ nav a:hover {
         to { width: 9em } /* 手機版可能需要微調 */
     }
 }
+
+.product-dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.close-button{
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.close-button:hover {
+    background-color: #c8a06e;
+}
