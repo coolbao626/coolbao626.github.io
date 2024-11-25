@@ -28,14 +28,14 @@ var product_details = [
         name: "聖誕節限定客製化寵物高腳碗",
         price: "620",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
-        description: "聖誕節限定客製化寵物高腳碗，可以根據您的需求進行設計和製作。",
+        description: "聖誕節限定客製化寵物高腳碗，可以根據您的需求進行設計和製作（接單至 11 月底）。",
         img: "assets/product-4.jpg",
     },
     {
         name: "客製化寵物似顏繪",
         price: "100",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
-        description: "客製化寵物似顏繪，可以根據您的需求進行設計和製作。",
+        description: "客製化寵物似顏繪，可以根據您的需求進行設計和製作（商品預覽圖為節日限定版本，目前暫停接單）。<br>寵物配件需按件數計費，細節請向小編確認。",
         img: "assets/product-5.jpg",
     },
 ];
