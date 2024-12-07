@@ -25,10 +25,10 @@ var product_details = [
         img: "assets/product-3.jpg",
     },
     {
-        name: "聖誕節限定客製化寵物高腳碗",
-        price: "620",
+        name: "春節限定產品（春聯/紅包袋）",
+        price: "150/420",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
-        description: "聖誕節限定客製化寵物高腳碗，可以根據您的需求進行設計和製作（接單至 11 月底）。",
+        description: "春聯有四款設計可選，第一件 $150，每多一件加 $70。<br>紅包袋包含照片款X3+似顏繪款X3，一組 6 袋 $420。",
         img: "assets/product-4.jpg",
     },
     {
