@@ -25,10 +25,10 @@ var product_details = [
         img: "assets/product-3.jpg",
     },
     {
-        name: "春節限定產品（春聯/紅包袋）",
-        price: "350/450",
+        name: "一般款/生日款 似顏繪馬克杯",
+        price: "單杯入：350/450 對杯：660/800",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
-        description: "春聯有四款設計可選，第一件 $150，每多一件加 $70。<br>紅包袋包含照片款X3+似顏繪款X3，一組 6 袋 $420。",
+        description: "一般款與生日款皆可選色，杯體本身有奶油色與白色。<br>拼色把手的部分僅能搭配白色杯體，拼色把手的部分共有紅、橘、黃、綠、藍、白可選。",
         img: "assets/product-4.jpg",
     },
     {
