@@ -26,7 +26,7 @@ var product_details = [
     },
     {
         name: "春節限定產品（春聯/紅包袋）",
-        price: "150/420",
+        price: "350/450",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
         description: "春聯有四款設計可選，第一件 $150，每多一件加 $70。<br>紅包袋包含照片款X3+似顏繪款X3，一組 6 袋 $420。",
         img: "assets/product-4.jpg",
