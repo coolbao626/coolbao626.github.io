@@ -176,3 +176,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const carousels = document.querySelectorAll('.ad-carousel');
     carousels.forEach(carousel => new Carousel(carousel));
 });
+
+// 新增懸浮按鈕樣式
+const style = document.createElement('style');
+style.textContent = `
+    .floating-chat-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #E1306C;  /* Instagram 品牌色 */
+        color: white;
+        padding: 15px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    .floating-chat-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        background-color: #C13584;  /* Instagram 深色 */
+    }
+
+    .floating-chat-btn i {
+        font-size: 24px;
+    }
+
+    .floating-chat-btn span {
+        font-weight: bold;
+    }
+`;
+document.head.appendChild(style);
