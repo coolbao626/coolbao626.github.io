@@ -151,6 +151,12 @@ nav a:hover {
     object-fit: cover;
 }
 
+.product-img-w {
+    width: 1000px;
+    max-height: 100% auto;
+    object-fit: cover;
+}
+
 .product-card {
     background: white;
     padding: 1rem;
@@ -252,6 +258,12 @@ nav a:hover {
 @media (max-width: 768px) {
     .product-img {
         width: 200px;
+        max-height: 100% auto;
+        object-fit: cover;
+    }
+
+    .product-img-w {
+        width: 400px;
         max-height: 100% auto;
         object-fit: cover;
     }

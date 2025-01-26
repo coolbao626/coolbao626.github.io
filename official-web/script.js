@@ -25,24 +25,24 @@ var product_details = [
         img: "assets/product-3.jpg",
     },
     {
+        name: "客製化寵物棉花糖泡泡碗",
+        price: "700",
+        url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
+        description: "客製化寵物棉花糖泡泡碗，可以根據您的需求進行設計和製作。",
+        img: "assets/product-4.jpg",
+    },
+    {
         name: "一般款 似顏繪馬克杯",
         price: "單杯入：350 對杯：660",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
         description: "一般款與生日款皆可選色，杯體本身有奶油色與白色。<br>拼色把手的部分僅能搭配白色杯體，拼色把手的部分共有紅、橘、黃、綠、藍",
-        img: "assets/product-4.jpg",
+        img: "assets/product-5.jpg",
     },
     {
         name: "生日款 似顏繪馬克杯",
         price: "單杯入：450 對杯：800",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
         description: "一般款與生日款皆可選色，杯體本身有奶油色與白色。<br>拼色把手的部分僅能搭配白色杯體，拼色把手的部分共有紅、橘、黃、綠、藍",
-        img: "assets/product-5.jpg",
-    },
-    {
-        name: "客製化寵物似顏繪",
-        price: "100",
-        url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
-        description: "客製化寵物似顏繪，可以根據您的需求進行設計和製作（商品預覽圖為節日限定版本，目前暫停接單）。<br>寵物配件需按件數計費，細節請向小編確認。",
         img: "assets/product-6.jpg",
     },
 ];
