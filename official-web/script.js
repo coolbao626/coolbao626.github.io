@@ -45,6 +45,34 @@ var product_details = [
         description: "一般款與生日款皆可選色，杯體本身有奶油色與白色。<br>拼色把手的部分僅能搭配白色杯體，拼色把手的部分共有紅、橘、黃、綠、藍",
         img: "assets/product-6.jpg",
     },
+    {
+        name: "雙肩後背包（牛津布系列）",
+        price: "NT$ 750",
+        url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
+        description: "多暗袋側面可裝水壺/長：31CM、寬：10CM、高：38CM/可裝筆電平板",
+        img: "assets/product-7.png",
+    },
+    {
+        name: "雙肩後背包（耐磨布系列）",
+        price: "NT$ 750",
+        url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
+        description: "防刮防水側面可裝水壺/長：29CM、寬：13CM、高：39CM/可裝筆電平板",
+        img: "assets/product-8.png",
+    },
+    {
+        name: "亮面舒芙蕾碗（含似顏繪客製化）",
+        price: "單層 NT$ 650/雙層 NT$ 700",
+        url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
+        description: "可選擇單層或雙層，並可根據您的需求進行設計和製作。<br>若需要高溫燒製款需要加價 $250。",
+        img: "assets/product-9.png",
+    },
+    {
+        name: "霧面舒芙蕾碗（含似顏繪客製化）",
+        price: "單層 NT$ 650/雙層 NT$ 700",
+        url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
+        description: "可選擇單層或雙層，並可根據您的需求進行設計和製作。<br>若需要高溫燒製款需要加價 $250。",
+        img: "assets/product-10.png",
+    },
 ];
 
 function add_to_cart(index) {
