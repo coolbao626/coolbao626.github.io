@@ -122,6 +122,89 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Gallery functionality
+    const modal = document.getElementById('galleryModal');
+    const dmButton = document.getElementById('dmButton');
+    const closeBtn = document.querySelector('.close');
+    const galleryContainer = document.querySelector('.gallery-container');
+    const prevPageBtn = document.querySelector('.prev-page');
+    const nextPageBtn = document.querySelector('.next-page');
+
+    let currentPage = 0;
+    const items = document.querySelectorAll('.gallery-item');
+    const totalItems = items.length;
+
+    // Show modal
+    dmButton.onclick = function() {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+        updateGalleryVisibility();
+    }
+
+    // Close modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Enable scrolling
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+
+    // Update gallery visibility based on current page
+    function updateGalleryVisibility() {
+        items.forEach((item, index) => {
+            if (index === currentPage) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+
+        // Update button states
+        prevPageBtn.disabled = currentPage === 0;
+        nextPageBtn.disabled = currentPage === totalItems - 1;
+    }
+
+    // Previous page
+    prevPageBtn.onclick = function() {
+        if (currentPage > 0) {
+            galleryContainer.classList.add('sliding-out');
+            setTimeout(() => {
+                currentPage--;
+                updateGalleryVisibility();
+                galleryContainer.classList.remove('sliding-out');
+                galleryContainer.classList.add('sliding');
+                setTimeout(() => {
+                    galleryContainer.classList.remove('sliding');
+                }, 500);
+            }, 500);
+        }
+    }
+
+    // Next page
+    nextPageBtn.onclick = function() {
+        if (currentPage < totalItems - 1) {
+            galleryContainer.classList.add('sliding-out');
+            setTimeout(() => {
+                currentPage++;
+                updateGalleryVisibility();
+                galleryContainer.classList.remove('sliding-out');
+                galleryContainer.classList.add('sliding');
+                setTimeout(() => {
+                    galleryContainer.classList.remove('sliding');
+                }, 500);
+            }, 500);
+        }
+    }
+
+    // Initialize gallery visibility
+    updateGalleryVisibility();
 });
 
 class Carousel {
