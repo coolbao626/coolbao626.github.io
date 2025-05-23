@@ -22,28 +22,28 @@ var product_details = [
         price: "580",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
         description: "客製化寵物高腳碗，可以根據您的需求進行設計和製作。",
-        img: "assets/product-3.jpg",
+        img: "assets/product-3.png",
     },
     {
         name: "客製化寵物棉花糖泡泡碗",
         price: "700",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
         description: "客製化寵物棉花糖泡泡碗，可以根據您的需求進行設計和製作。",
-        img: "assets/product-4.jpg",
+        img: "assets/product-4.png",
     },
     {
         name: "一般款 似顏繪馬克杯",
         price: "單杯入：350 對杯：660",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
         description: "一般款與生日款皆可選色，杯體本身有奶油色與白色。<br>拼色把手的部分僅能搭配白色杯體，拼色把手的部分共有紅、橘、黃、綠、藍",
-        img: "assets/product-5.jpg",
+        img: "assets/product-5.png",
     },
     {
         name: "生日款 似顏繪馬克杯",
         price: "單杯入：450 對杯：800",
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
         description: "一般款與生日款皆可選色，杯體本身有奶油色與白色。<br>拼色把手的部分僅能搭配白色杯體，拼色把手的部分共有紅、橘、黃、綠、藍",
-        img: "assets/product-6.jpg",
+        img: "assets/product-6.png",
     },
     {
         name: "雙肩後背包（牛津布系列）",
@@ -72,6 +72,13 @@ var product_details = [
         url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
         description: "可選擇單層或雙層，並可根據您的需求進行設計和製作。<br>若需要高溫燒製款需要加價 $250。",
         img: "assets/product-10.png",
+    },
+    {
+        name: "帆布包（含似顏繪客製化）",
+        price: "NT$ 650（雙面印製 +100）",
+        url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
+        description: "可選擇單面或雙面，並可根據您的需求進行設計和製作。",
+        img: "assets/product-11.png",
     },
 ];
 
