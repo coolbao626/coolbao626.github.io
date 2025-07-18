@@ -439,6 +439,33 @@ nav a:hover {
     font-size: 0.9rem;
 }
 
+.center-btn {
+    text-align: center;
+}
+
+.read-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: linear-gradient(90deg, #d4b895 0%, #e7cfa7 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(212, 184, 149, 0.15);
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.read-btn:hover {
+    background: linear-gradient(90deg, #e7cfa7 0%, #d4b895 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(212, 184, 149, 0.25);
+}
+
 /* 響應式設計 */
 @media (max-width: 768px) {
     .footer {
