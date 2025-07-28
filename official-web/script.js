@@ -80,6 +80,20 @@ var product_details = [
         description: "可選擇單面或雙面，並可根據您的需求進行設計和製作。",
         img: "assets/product-11.webp",
     },
+    {
+        name: "帆布包（含似顏繪客製化）",
+        price: "NT$ 700（+100）",
+        url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
+        description: "可選擇單面或雙面，並可根據您的需求進行設計和製作。",
+        img: "assets/product-12.webp",
+    },
+    {
+        name: "乳酪碗",
+        price: "NT$ 950",
+        url: "https://myship.7-11.com.tw/general/detail/GM2411147095868",
+        description: "根據您的需求進行設計和製作的精緻寵物碗。",
+        img: "assets/product-13.webp",
+    },
 ];
 
 function add_to_cart(index) {
