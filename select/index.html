@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="酷寶家族 - 精緻客製化寵物用品，提供高品質的客製化陶瓷盤、碗、馬克杯等商品，為您的毛小孩打造專屬用品。">
+    <meta name="keywords" content="酷寶家族, 客製化寵物用品, 寵物陶瓷盤, 寵物碗, 客製化馬克杯, 寵物周邊">
+    <title>酷寶家族 | 精緻選物</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="google-site-verification" content="1IN3Q0s1JqN5m5g9feSOQCFRb-egniDzyoSOvgokAQ0" />
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <div class="main-logo">
+                <div class="partner-logo">
+                    <img src="assets/logo.webp" alt="酷寶家族">
+                </div>
+                <div class="text-logo">酷寶家選物</div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#hero">首頁</a></li>
+            <li><a href="#purchase">如何下單</a></li>
+            <li><a href="#products">商品</a></li>
+            <li><a href="#about">關於我們</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="hero">
+        <h1 class="typewriter">發現生活中的質感。</h1>
+        <p>精選日常必需品，為您打造簡約優雅的生活風格</p>
+        <div class="ad-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="assets/ad-1.webp" alt="廣告1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/ad-9.webp" alt="廣告2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/ad-2.webp" alt="廣告2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/ad-3.webp" alt="廣告3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/ad-4.webp" alt="廣告4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/ad-5.webp" alt="廣告5">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/ad-6.webp" alt="廣告6">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/ad-7.webp" alt="廣告7">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/ad-8.webp" alt="廣告8">
+                </div>
+            </div>
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
+            <div class="carousel-dots"></div>
+        </div>
+    </header>
+
+    <section id="products">
+        <h2 class="section-title"><span class="title-decoration">|</span> 精選商品 <span class="title-decoration">|</span></h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img-w" src="assets/product-3.webp" alt="客製化寵物高腳碗">
+                <h3>客製化寵物高腳碗</h3>
+                <p>NT$ 580</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(2)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(2)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img-w" src="assets/product-4.webp" alt="客製化寵物棉花糖泡泡碗">
+                <h3>客製化寵物棉花糖泡泡碗</h3>
+                <p>NT$ 700/700</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(3)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(3)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img" src="assets/product-5.webp" alt="一般款 似顏繪馬克杯">
+                <h3>一般款 似顏繪馬克杯</h3>
+                <p>N單杯入：350 對杯：660</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(4)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(4)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img" src="assets/product-6.webp" alt="生日款 似顏繪馬克杯">
+                <h3>生日款 似顏繪馬克杯</h3>
+                <p>N單杯入：450 對杯：800</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(5)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(5)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img" src="assets/product-7.webp" alt="雙肩後背包（牛津布系列）">
+                <h3>雙肩後背包（牛津布系列）</h3>
+                <p>NT$ 750</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(6)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(6)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img" src="assets/product-8.webp" alt="雙肩後背包（防刮布系列）">
+                <h3>雙肩後背包（防刮布系列）</h3>
+                <p>NT$ 750</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(7)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(7)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img" src="assets/product-9.webp" alt="亮面舒芙蕾碗（含似顏繪客製化）">
+                <h3>亮面舒芙蕾碗（含似顏繪客製化）</h3>
+                <p>單層 NT$ 650/雙層 NT$ 700</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(8)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(8)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img" src="assets/product-10.webp" alt="霧面舒芙蕾碗（含似顏繪客製化）">
+                <h3>霧面舒芙蕾碗（含似顏繪客製化）</h3>
+                <p>單層 NT$ 650/雙層 NT$ 700</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(9)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(9)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img-w" src="assets/product-11.webp" alt="帆布包">
+                <h3>帆布包（含似顏繪客製化）</h3>
+                <p>NT$ 650（雙面印製 +100）</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(10)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(10)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img-w" src="assets/product-12.webp" alt="二代帆布包">
+                <h3>二代帆布包（含似顏繪客製化）</h3>
+                <p>NT$ 700（雙面印製 +100）</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(11)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(11)">更多資訊</button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-img" src="assets/product-13.webp" alt="乳酪碗">
+                <h3>乳酪碗（高溫燒製永久款）</h3>
+                <p>NT$ 950</p>
+                <button class="add-to-cart-btn" onclick="add_to_cart(12)">加入購物車</button>
+                <button class="see-details-btn" onclick="see_details(12)">更多資訊</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="dm/1.webp" alt="客製化寵物高腳碗">
+                </div>
+                <div class="gallery-item">
+                    <img src="dm/2.webp" alt="客製化寵物棉花糖泡泡碗">
+                </div>
+                <div class="gallery-item">
+                    <img src="dm/3.webp" alt="舒芙蕾碗">
+                </div>
+                <div class="gallery-item">
+                    <img src="dm/4.webp" alt="奢華寵物碗">
+                </div>
+                <div class="gallery-item">
+                    <img src="dm/5.webp" alt="馬克杯">
+                </div>
+                <div class="gallery-item">
+                    <img src="dm/6.webp" alt="帆布袋">
+                </div>
+                <div class="gallery-item">
+                    <img src="dm/7.webp" alt="雙肩後背包">
+                </div>
+                <div class="gallery-item">
+                    <img src="dm/8.webp" alt="吊飾">
+                </div>
+            </div>
+            <div class="gallery-nav">
+                <button class="prev-page">上一頁</button>
+                <button class="next-page">下一頁</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="dmButton" class="dm-button">
+        <span>查看產品 DM</span>
+    </button>
+
+    <section class="partners">
+        <div class="container">
+          <h2 class="section-title">合作夥伴</h2>
+          <div class="partners-grid">
+            <a target="_blank" href="https://www.facebook.com/MaoTuiTui/?locale=zh_TW">
+                <div class="partner-item">
+                    <img src="assets/partner-3.webp" alt="社團法人毛腿腿浪愛幸福協會"></img>
+                    <div class="overlay">
+                        <p class="description">🚩社團法人毛腿腿浪愛幸福協會🚩<br/>台內團字第1090054102號</p>
+                    </div>
+                </div>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/mao_d.o/">
+                <div class="partner-item">
+                    <img src="assets/partner-4.webp" alt="毛鬥手作"></img>
+                    <div class="overlay">
+                        <p class="description">毛鬥手作ᴥ︎ 客製化x寵物領巾、配件</p>
+                    </div>
+                </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    <section id="purchase" class="section">
+        <div class="container">
+            <h2 class="section-title">選購須知</h2>
+            <div class="center-btn">
+                <a class="read-btn" href="https://coolbao626.github.io/select/assets/purchase_info.webp" target="_blank">按我閱讀</a>
+            </div>
+            <!-- <ul>
+                <li><p>為了確保每一個買家可以收到符合自己喜好的產品，酷寶家的所有產品皆需要買家與酷寶麻討論設計！</p></li>
+                <li><p>購買前，請透過<a href="https://www.instagram.com/coolbabyorkshire/" target="_blank" class="social-link">IG</a>私訊，確認商品細節和數量。</p></li>
+                <li><p>採下單時付訂金的方式，假設總額為 $700，需先支付  $700 - $60（運費我們承擔！） = $640。</p></li>
+                <li><p>商品完成後，我們會幫您從全家好賣+下單，商品加運費一共 $60（尾款），採用貨到付款。</p></li>
+                <li><p>自 2025/02/01 起，酷寶家不再提供 7-11 賣貨便免運，而是改用全家好賣家作為主要出貨管道，因此，如果您堅持使用 7-11 賣貨便會酌收 $38 元的運費唷！</p></li>
+            </ul> -->
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">關於我們</h2>
+            <div class="section-content">
+                <p>大家好！我們是約克夏酷寶的爸媽，在幫毛小孩添購周邊玩具、配件時發現寵物用品的價格非常驚人。因此，我們利用自己的專長+熱情推出一系列高C/P值的毛孩客製化產品，希望打造一個人人都喜歡且負擔得起的品牌。</p>
+                <br>
+                <a href="https://coolbao626.github.io/blogs/" target="_blank">
+                    <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>關於我們</h3>
+                <p>酷寶家族 x 客製嚴選</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>聯絡資訊</h3>
+                <ul>
+                    <!-- <li><i class="fas fa-phone"></i> (02) 1234-5678</li> -->
+                    <li><i class="fas fa-envelope"></i>Email: coolbao626@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i>Address: 酷寶家</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>快速連結</h3>
+                <ul>
+                    <li><a href="#hero">首頁</a></li>
+                    <li><a href="#products">商品</a></li>
+                    <li><a href="#about">關於我們</a></li>
+                    <li><a href="#contact">聯絡我們</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>追蹤我們</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61561337532765" target="_blank"><i class="fab fa-facebook"></i>FB</a>
+                    <a href="https://www.instagram.com/coolbabyorkshire/" target="_blank"><i class="fab fa-instagram"></i>IG</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 酷寶家族 x 客製嚴選. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://ig.me/m/coolbabyorkshire" class="floating-chat-btn" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <span>聯絡我們</span>
+    </a>
+
+</body>
+</html> 
