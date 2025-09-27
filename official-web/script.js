@@ -148,25 +148,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('galleryModal');
     const dmButton = document.getElementById('dmButton');
     const closeBtn = document.querySelector('.close');
-    const galleryContainer = document.querySelector('.gallery-container');
+    const book = document.querySelector('.book');
+    const leftPage = document.querySelector('.left-page .page-content');
+    const rightPage = document.querySelector('.right-page .page-content');
+    const flipPage = document.querySelector('.flip-page');
+    const flipPageFront = document.querySelector('.flip-page .front');
+    const flipPageBack = document.querySelector('.flip-page .back');
     const prevPageBtn = document.querySelector('.prev-page');
     const nextPageBtn = document.querySelector('.next-page');
+    const currentPagesSpan = document.querySelector('.current-pages');
 
-    let currentPage = 0;
-    const items = document.querySelectorAll('.gallery-item');
-    const totalItems = items.length;
+    // 圖片資料
+    const images = [
+        { src: 'dm/1.webp', alt: '客製化寵物高腳碗' },
+        { src: 'dm/2.webp', alt: '客製化寵物棉花糖泡泡碗' },
+        { src: 'dm/3.webp', alt: '舒芙蕾碗' },
+        { src: 'dm/4.webp', alt: '奢華寵物碗' },
+        { src: 'dm/5.webp', alt: '馬克杯' },
+        { src: 'dm/6.webp', alt: '帆布袋' },
+        { src: 'dm/7.webp', alt: '雙肩後背包' },
+        { src: 'dm/8.webp', alt: '吊飾' },
+        { src: 'dm/9.webp', alt: '吊飾' },
+        { src: 'dm/10.webp', alt: '吊飾' },
+        { src: 'dm/11.webp', alt: '吊飾' },
+        { src: 'dm/12.webp', alt: '吊飾' },
+        { src: 'dm/13.webp', alt: '吊飾' },
+        { src: 'dm/14.webp', alt: '吊飾' },
+    ];
+
+    let currentSpread = 0; // 當前跨頁（每個跨頁包含兩頁）
+    const totalSpreads = Math.ceil(images.length / 2);
+    let isFlipping = false;
+    
+    console.log('初始化 - 圖片總數:', images.length, '總跨頁數:', totalSpreads);
 
     // Show modal
     dmButton.onclick = function() {
         modal.style.display = "block";
-        document.body.style.overflow = "hidden"; // Prevent scrolling
-        updateGalleryVisibility();
+        document.body.style.overflow = "hidden";
+        currentSpread = 0;
+        isFlipping = false;
+        console.log('開啟模態框，重置為第一跨頁');
+        updateBookPages();
     }
 
     // Close modal
     closeBtn.onclick = function() {
         modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Enable scrolling
+        document.body.style.overflow = "auto";
     }
 
     // Close modal when clicking outside
@@ -177,55 +206,282 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Update gallery visibility based on current page
-    function updateGalleryVisibility() {
-        items.forEach((item, index) => {
-            if (index === currentPage) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
-        });
+    // 更新書本頁面內容（完整更新）
+    function updateBookPages() {
+        const leftPageIndex = currentSpread * 2;
+        const rightPageIndex = currentSpread * 2 + 1;
 
-        // Update button states
-        prevPageBtn.disabled = currentPage === 0;
-        nextPageBtn.disabled = currentPage === totalItems - 1;
+        console.log('更新頁面，當前跨頁:', currentSpread, '左頁索引:', leftPageIndex, '右頁索引:', rightPageIndex);
+
+        // 更新左頁
+        const leftImg = leftPage.querySelector('img');
+        if (leftPageIndex < images.length) {
+            leftImg.src = images[leftPageIndex].src;
+            leftImg.alt = images[leftPageIndex].alt;
+            leftImg.style.display = 'block';
+            leftImg.style.opacity = '1'; // 確保透明度正常
+        } else {
+            leftImg.style.display = 'none';
+        }
+
+        // 更新右頁
+        const rightImg = rightPage.querySelector('img');
+        if (rightPageIndex < images.length) {
+            rightImg.src = images[rightPageIndex].src;
+            rightImg.alt = images[rightPageIndex].alt;
+            rightImg.style.display = 'block';
+            rightImg.style.opacity = '1'; // 確保透明度正常
+        } else {
+            rightImg.style.display = 'none';
+        }
+
+        updatePageIndicatorAndButtons();
+    }
+
+    // 部分更新（只更新左頁、指示器和按鈕，右頁已在動畫中提前更新）
+    function updateBookPagesPartial() {
+        const leftPageIndex = currentSpread * 2;
+
+        console.log('部分更新，當前跨頁:', currentSpread, '左頁索引:', leftPageIndex);
+
+        // 更新左頁
+        const leftImg = leftPage.querySelector('img');
+        if (leftPageIndex < images.length) {
+            leftImg.src = images[leftPageIndex].src;
+            leftImg.alt = images[leftPageIndex].alt;
+            leftImg.style.display = 'block';
+            leftImg.style.opacity = '1'; // 確保透明度正常
+        } else {
+            leftImg.style.display = 'none';
+        }
+
+        updatePageIndicatorAndButtons();
+    }
+
+    // 更新頁碼指示器和按鈕狀態
+    function updatePageIndicatorAndButtons() {
+        // 更新頁碼指示器
+        const startPage = currentSpread * 2 + 1;
+        const endPage = Math.min(startPage + 1, images.length);
+        currentPagesSpan.textContent = startPage === endPage ? startPage : `${startPage}-${endPage}`;
+
+        console.log('頁碼指示器:', currentPagesSpan.textContent);
+
+        // 更新按鈕狀態
+        if (currentSpread === 0 || isFlipping) {
+            prevPageBtn.disabled = true;
+            prevPageBtn.setAttribute('disabled', 'true');
+        } else {
+            prevPageBtn.disabled = false;
+            prevPageBtn.removeAttribute('disabled');
+        }
+        
+        if (currentSpread >= totalSpreads - 1 || isFlipping) {
+            nextPageBtn.disabled = true;
+            nextPageBtn.setAttribute('disabled', 'true');
+        } else {
+            nextPageBtn.disabled = false;
+            nextPageBtn.removeAttribute('disabled');
+        }
+        
+        console.log('按鈕狀態 - 上一頁:', prevPageBtn.disabled, '下一頁:', nextPageBtn.disabled);
+        console.log('currentSpread:', currentSpread, 'totalSpreads:', totalSpreads, 'totalSpreads-1:', totalSpreads - 1);
+    }
+
+    // 翻頁到下一跨頁
+    function flipToNext() {
+        console.log('嘗試翻到下一頁，檢查條件：');
+        console.log('isFlipping:', isFlipping);
+        console.log('currentSpread:', currentSpread, 'totalSpreads:', totalSpreads);
+        console.log('currentSpread >= totalSpreads - 1:', currentSpread >= totalSpreads - 1);
+        
+        if (isFlipping || currentSpread >= totalSpreads - 1) {
+            console.log('翻頁被阻止');
+            return;
+        }
+        
+        isFlipping = true;
+        
+        console.log('開始翻頁，翻頁前 currentSpread:', currentSpread);
+        console.log('總跨頁數:', totalSpreads);
+        
+        // 當前跨頁：n+0, n+1
+        // 下一跨頁：n+2, n+3
+        const currentRightIndex = currentSpread * 2 + 1; // n+1
+        const nextLeftIndex = (currentSpread + 1) * 2;   // n+2
+        
+        console.log('當前右頁索引:', currentRightIndex, '下一左頁索引:', nextLeftIndex);
+        
+        // 設置翻頁元素
+        const frontImg = flipPageFront.querySelector('img');
+        const backImg = flipPageBack.querySelector('img');
+        
+        // 正面：當前右頁 (n+1)
+        if (currentRightIndex < images.length) {
+            frontImg.src = images[currentRightIndex].src;
+            frontImg.alt = images[currentRightIndex].alt;
+        }
+        
+        // 背面：下一跨頁的左頁 (n+2)
+        if (nextLeftIndex < images.length) {
+            backImg.src = images[nextLeftIndex].src;
+            backImg.alt = images[nextLeftIndex].alt;
+        }
+        
+        // 顯示翻頁元素
+        flipPage.style.display = 'block';
+        
+        // 強制重排後開始動畫
+        requestAnimationFrame(() => {
+            flipPage.classList.add('flipping');
+            
+            // 在翻頁動畫的中間階段更新右頁內容（更快的視覺反饋）
+            setTimeout(() => {
+                const nextRightIndex = (currentSpread + 1) * 2 + 1; // n+3
+                const rightImg = rightPage.querySelector('img');
+                
+                // 添加淡入效果
+                rightImg.style.opacity = '0';
+                
+                if (nextRightIndex < images.length) {
+                    rightImg.src = images[nextRightIndex].src;
+                    rightImg.alt = images[nextRightIndex].alt;
+                    rightImg.style.display = 'block';
+                } else {
+                    rightImg.style.display = 'none';
+                }
+                
+                // 淡入新圖片
+                requestAnimationFrame(() => {
+                    rightImg.style.transition = 'opacity 0.3s ease';
+                    rightImg.style.opacity = '1';
+                });
+                
+                console.log('中間階段更新右頁，索引:', nextRightIndex);
+            }, 400); // 在400ms時更新右頁（動畫還在進行中）
+            
+            // 1秒後完成翻頁
+            setTimeout(() => {
+                currentSpread++;
+                console.log('翻頁後 currentSpread:', currentSpread);
+                
+                // 清理動畫
+                flipPage.classList.remove('flipping');
+                flipPage.style.display = 'none';
+                isFlipping = false;
+                console.log('翻頁完成，isFlipping 重置為:', isFlipping);
+                
+                // 更新左頁和頁碼指示器
+                updateBookPagesPartial();
+            }, 1000);
+        });
+    }
+
+    // 翻頁到上一跨頁
+    function flipToPrev() {
+        console.log('嘗試翻到上一頁，檢查條件：');
+        console.log('isFlipping:', isFlipping);
+        console.log('currentSpread:', currentSpread);
+        console.log('currentSpread === 0:', currentSpread === 0);
+        
+        if (isFlipping || currentSpread === 0) {
+            console.log('往前翻頁被阻止');
+            return;
+        }
+        
+        isFlipping = true;
+        
+        console.log('開始往前翻頁，當前 currentSpread:', currentSpread);
+        
+        // 當前跨頁：n+2, n+3
+        // 上一跨頁：n+0, n+1
+        const prevRightIndex = (currentSpread - 1) * 2 + 1; // n+1
+        const currentLeftIndex = currentSpread * 2;          // n+2
+        
+        // 設置翻頁元素
+        const frontImg = flipPageFront.querySelector('img');
+        const backImg = flipPageBack.querySelector('img');
+        
+        // 正面：上一跨頁的右頁 (n+1)
+        if (prevRightIndex >= 0 && prevRightIndex < images.length) {
+            frontImg.src = images[prevRightIndex].src;
+            frontImg.alt = images[prevRightIndex].alt;
+        }
+        
+        // 背面：當前左頁 (n+2)
+        if (currentLeftIndex < images.length) {
+            backImg.src = images[currentLeftIndex].src;
+            backImg.alt = images[currentLeftIndex].alt;
+        }
+        
+        // 顯示翻頁元素，預先設為翻轉狀態
+        flipPage.style.display = 'block';
+        flipPage.classList.add('flipping');
+        
+        // 短暫延遲後開始反向動畫
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                flipPage.classList.remove('flipping');
+                
+                // 在動畫中間階段更新右頁內容
+                setTimeout(() => {
+                    const prevRightIndex = (currentSpread - 1) * 2 + 1;
+                    const rightImg = rightPage.querySelector('img');
+                    
+                    // 添加淡入效果
+                    rightImg.style.opacity = '0';
+                    
+                    if (prevRightIndex >= 0 && prevRightIndex < images.length) {
+                        rightImg.src = images[prevRightIndex].src;
+                        rightImg.alt = images[prevRightIndex].alt;
+                        rightImg.style.display = 'block';
+                    } else {
+                        rightImg.style.display = 'none';
+                    }
+                    
+                    // 淡入新圖片
+                    requestAnimationFrame(() => {
+                        rightImg.style.transition = 'opacity 0.3s ease';
+                        rightImg.style.opacity = '1';
+                    });
+                    
+                    console.log('向前翻頁中間階段更新右頁，索引:', prevRightIndex);
+                }, 400);
+                
+                // 1秒後完成翻頁
+                setTimeout(() => {
+                    currentSpread--;
+                    console.log('往前翻頁後 currentSpread:', currentSpread);
+                    
+                    // 清理動畫
+                    flipPage.style.display = 'none';
+                    isFlipping = false;
+                    console.log('往前翻頁完成，isFlipping 重置為:', isFlipping);
+                    
+                    // 更新左頁和頁碼指示器
+                    updateBookPagesPartial();
+                }, 1000);
+            }, 50);
+        });
     }
 
     // Previous page
     prevPageBtn.onclick = function() {
-        if (currentPage > 0) {
-            galleryContainer.classList.add('sliding-out');
-            setTimeout(() => {
-                currentPage--;
-                updateGalleryVisibility();
-                galleryContainer.classList.remove('sliding-out');
-                galleryContainer.classList.add('sliding');
-                setTimeout(() => {
-                    galleryContainer.classList.remove('sliding');
-                }, 500);
-            }, 500);
-        }
+        flipToPrev();
     }
 
     // Next page
     nextPageBtn.onclick = function() {
-        if (currentPage < totalItems - 1) {
-            galleryContainer.classList.add('sliding-out');
-            setTimeout(() => {
-                currentPage++;
-                updateGalleryVisibility();
-                galleryContainer.classList.remove('sliding-out');
-                galleryContainer.classList.add('sliding');
-                setTimeout(() => {
-                    galleryContainer.classList.remove('sliding');
-                }, 500);
-            }, 500);
-        }
+        flipToNext();
     }
 
-    // Initialize gallery visibility
-    updateGalleryVisibility();
+    // Initialize book
+    updateBookPages();
+    
+    // 確保按鈕初始狀態正確
+    console.log('初始化完成後的狀態檢查：');
+    console.log('prevPageBtn.disabled:', prevPageBtn.disabled);
+    console.log('nextPageBtn.disabled:', nextPageBtn.disabled);
 });
 
 class Carousel {
